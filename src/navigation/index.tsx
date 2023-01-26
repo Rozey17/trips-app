@@ -16,7 +16,7 @@ const RootNavigator = () => {
     <Stack.Navigator
       initialRouteName="MainLayout"
       screenOptions={{
-        // gestureEnabled: false,
+        gestureEnabled: false,
         headerShown: false,
       }}
     >

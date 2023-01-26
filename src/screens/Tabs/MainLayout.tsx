@@ -21,7 +21,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="search"
           size={20}
-          color={selectedBottomTab == "Search" ? "#22d3ee" : "#d1d5db"}
+          color={selectedBottomTab == "Search" ? "#fb7185" : "#9ca3af"}
         />
       ),
     },
@@ -32,7 +32,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="heart"
           size={20}
-          color={selectedBottomTab == "Wishlist" ? "#22d3ee" : "#d1d5db"}
+          color={selectedBottomTab == "Wishlist" ? "#fb7185" : "#9ca3af"}
         />
       ),
     },
@@ -43,7 +43,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="suitcase"
           size={20}
-          color={selectedBottomTab == "Trips" ? "#22d3ee" : "#d1d5db"}
+          color={selectedBottomTab == "Trips" ? "#fb7185" : "#9ca3af"}
         />
       ),
     },
@@ -54,7 +54,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="inbox"
           size={20}
-          color={selectedBottomTab == "Inbox" ? "#22d3ee" : "#d1d5db"}
+          color={selectedBottomTab == "Inbox" ? "#fb7185" : "#9ca3af"}
         />
       ),
     },
@@ -65,7 +65,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="user-circle"
           size={20}
-          color={selectedBottomTab == "Profile" ? "#22d3ee" : "#d1d5db"}
+          color={selectedBottomTab == "Profile" ? "#fb7185" : "#9ca3af"}
         />
       ),
     },
@@ -78,8 +78,11 @@ export default function MainLayout() {
       {selectedBottomTab == "Profile" && <Profile />}
       {selectedBottomTab == "Trips" && <Trips />}
       {selectedBottomTab == "Wishlist" && <Wishlist />}
+
       {/* Tabs */}
-      <View style={s`w-full px-4 py-2 flex-row justify-between bg-white`}>
+      <View
+        style={s`w-full px-6 py-3 flex-row justify-between bg-white border-t border-gray-200`}
+      >
         {TABS.map((item, index) => (
           <TouchableOpacity
             key={index}
@@ -97,7 +100,7 @@ export default function MainLayout() {
                   fontSize: 14,
                   // lineHeight: 21,
                   marginTop: 5,
-                  color: selectedBottomTab == item.text ? "#22d3ee" : "#d1d5db",
+                  color: selectedBottomTab == item.text ? "#fb7185" : "#9ca3af",
                 }}
               >
                 {item.text}
