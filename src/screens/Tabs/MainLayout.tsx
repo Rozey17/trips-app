@@ -109,6 +109,14 @@ export default function MainLayout() {
           </TouchableOpacity>
         ))}
       </View>
+
+      {selectedBottomTab == "Inbox" && <StatusBar barStyle="light-content" />}
+      {selectedBottomTab == "Search" && <StatusBar barStyle="light-content" />}
+      {selectedBottomTab == "Profile" && <StatusBar barStyle="light-content" />}
+      {selectedBottomTab == "Trips" && <StatusBar barStyle="light-content" />}
+      {selectedBottomTab == "Wishlist" && (
+        <StatusBar barStyle="light-content" />
+      )}
     </View>
   );
 }

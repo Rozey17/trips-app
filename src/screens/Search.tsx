@@ -25,18 +25,7 @@ const Search = () => {
         style={{ margin: 0 }}
       >
         {/* Content */}
-        <View
-          // style={{
-          //   backgroundColor: "white",
-          //   position: "absolute",
-          //   width: "100%",
-          //   bottom: 0,
-          //   paddingHorizontal: 28,
-          //   paddingVertical: 40,
-
-          // }}
-          style={s`bg-white absolute p-5 h-full w-full bottom-0`}
-        >
+        <View style={s`bg-white absolute p-5 h-full w-full bottom-0`}>
           <TouchableOpacity
             style={{
               position: "absolute",
@@ -48,6 +37,65 @@ const Search = () => {
           >
             <AntDesign name="close" size={24} color="black" />
           </TouchableOpacity>
+          <Text style={s`font-bold text-3xl mt-10`}>Select passengers</Text>
+          <View>
+            <View style={s`flex-row items-center justify-between mt-10`}>
+              <Text style={s`text-lg font-semibold`}>Adults</Text>
+              <View style={s`flex-row items-center w-32 justify-between`}>
+                <TouchableOpacity
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-rose-400`}
+                >
+                  <AntDesign name="minus" size={24} color="black" />
+                </TouchableOpacity>
+                <Text style={s`text-xl font-bold`}>0</Text>
+                <TouchableOpacity
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-rose-400`}
+                >
+                  <AntDesign name="plus" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            </View>
+            <View style={s`flex-row items-center justify-between mt-10`}>
+              <Text style={s`text-lg font-semibold`}>Children</Text>
+              <View style={s`flex-row items-center w-32 justify-between`}>
+                <TouchableOpacity
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-rose-400`}
+                >
+                  <AntDesign name="minus" size={24} color="black" />
+                </TouchableOpacity>
+                <Text style={s`text-xl font-bold`}>0</Text>
+                <TouchableOpacity
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-rose-400`}
+                >
+                  <AntDesign name="plus" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            </View>
+            <TouchableOpacity
+              style={s`py-3 px-4 rounded bg-sky-500 mt-10`}
+              onPress={() => setShowInfoModal(false)}
+            >
+              <Text style={s`text-white text-center font-medium `}>
+                Validate
+              </Text>
+            </TouchableOpacity>
+            {/* <View style={s`flex-row items-center justify-between mt-10`}>
+              <Text>Adults</Text>
+              <View style={s`flex-row items-center w-32 justify-between`}>
+                <TouchableOpacity
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-rose-400`}
+                >
+                  <Text style={s`text-xl`}>-</Text>
+                </TouchableOpacity>
+                <Text style={s`text-xl`}>0</Text>
+                <TouchableOpacity
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-rose-400`}
+                >
+                  <Text style={s`text-xl`}>+</Text>
+                </TouchableOpacity>
+              </View>
+            </View> */}
+          </View>
         </View>
       </Modal>
     );
@@ -79,14 +127,16 @@ const Search = () => {
               placeholder="To ..."
             />
           </View>
-          <TextInput
-            style={s`rounded border border-gray-300 py-2 px-4 mt-5`}
-            placeholder="To ..."
-          />
+          <TouchableOpacity
+            style={s`p-3 rounded mt-5 border border-gray-300`}
+            onPress={() => setShowInfoModal(!showInfoModal)}
+          >
+            <Text>1 adult</Text>
+          </TouchableOpacity>
 
           <TouchableOpacity
             style={s`p-3 rounded mt-5 bg-sky-500`}
-            onPress={() => setShowInfoModal(!showInfoModal)}
+            // onPress={() => setShowInfoModal(!showInfoModal)}
           >
             <Text style={s` text-white font-medium text-center`}>Search</Text>
           </TouchableOpacity>

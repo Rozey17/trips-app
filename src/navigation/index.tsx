@@ -18,6 +18,8 @@ const RootNavigator = () => {
       screenOptions={{
         gestureEnabled: false,
         headerShown: false,
+        //@ts-ignore
+        cardStyle: { backgroundColor: "white" },
       }}
     >
       <Stack.Screen name="MainLayout" component={MainLayout} />
