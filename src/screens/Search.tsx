@@ -4,6 +4,7 @@ import {
   ScrollView,
   TouchableOpacity,
   RefreshControl,
+  StatusBar,
 } from "react-native";
 import React, { useState } from "react";
 import { s } from "react-native-wind";
@@ -114,6 +115,7 @@ const Search = () => {
   }
   return (
     <View style={s`flex-1`}>
+      {/* <StatusBar barStyle="light-content" /> */}
       <Header />
 
       <ScrollView

@@ -7,7 +7,7 @@ import {
   Image,
   TextInput,
 } from "react-native";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { s } from "react-native-wind";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
@@ -15,10 +15,14 @@ import { useNavigation } from "@react-navigation/native";
 
 const PersonalInfo = () => {
   const navigation = useNavigation();
-
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, []);
   return (
     <SafeAreaView style={s`bg-white h-full `}>
-      <View style={s`flex-row px-2 py-4 items-center justify-between`}>
+      <View style={s`flex-row px-5 py-4 items-center justify-between`}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>

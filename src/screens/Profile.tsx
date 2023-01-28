@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet, Pressable } from "react-native";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
@@ -7,6 +7,12 @@ import { useNavigation } from "@react-navigation/native";
 
 const Profile = () => {
   const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, []);
   return (
     <SafeAreaView style={s`flex-1 p-4 bg-white`}>
       <View style={s`flex-row items-center my-5`}>
@@ -44,6 +50,7 @@ const Profile = () => {
       </Pressable>
       <Pressable
         style={s`flex-row items-center justify-between py-5  border-b border-gray-200`}
+        onPress={() => navigation.navigate("PaymentMethod")}
       >
         <View style={s`flex-row items-center `}>
           <Feather name="credit-card" size={24} color="#9ca3af" />
