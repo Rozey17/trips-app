@@ -9,14 +9,18 @@ const Header = () => {
     <LinearGradient
       // Background Linear Gradient
       colors={["#4c669f", "#3b5998", "#192f6a"]}
-      style={s`h-28`}
+      style={s`h-24`}
     >
       <View style={s` `}>
         <SafeAreaView>
           <Text
             style={[
-              { fontFamily: "josefinSans-bold", fontSize: 36 },
-              s`z-10 p-4  text-white`,
+              {
+                fontFamily: "josefinSans-bold",
+                fontSize: 25,
+                textTransform: "uppercase",
+              },
+              s` p-2 pt-3  text-white`,
             ]}
           >
             TicketGo

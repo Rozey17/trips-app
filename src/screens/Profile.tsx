@@ -15,8 +15,17 @@ const Profile = () => {
           style={s`w-20 h-20 mr-6`}
         />
         <View>
-          <Text style={styles.title}>Bouiti</Text>
-          <Text numberOfLines={1}>Lorem ipsum dolor sit, amet</Text>
+          <Text numberOfLines={1} style={styles.title}>
+            Bouiti Viodo
+          </Text>
+          <Text
+            style={[
+              { fontFamily: "catamaran-regular", fontSize: 16 },
+              s`text-gray-400`,
+            ]}
+          >
+            Lorem ipsum dolor sit, amet
+          </Text>
         </View>
       </View>
       <Pressable

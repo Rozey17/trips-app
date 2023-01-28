@@ -1,18 +1,8 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  ScrollView,
-  Pressable,
-  StyleSheet,
-} from "react-native";
+import { View, Text, ScrollView, Pressable, StyleSheet } from "react-native";
 import React from "react";
 import { s } from "react-native-wind";
 import { useNavigation } from "@react-navigation/native";
 import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import { TextInput } from "react-native-paper";
-import { LinearGradient } from "expo-linear-gradient";
 import FindCityHeader from "../components/FindCityHeader";
 
 const Localization = () => {
