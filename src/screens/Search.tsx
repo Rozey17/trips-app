@@ -171,7 +171,7 @@ const Search = () => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={s`p-3 rounded mt-5 bg-sky-500`}
+            style={s`p-4 mt-5 bg-teal-500`}
             // onPress={() => setShowInfoModal(!showInfoModal)}
           >
             <Text style={s` text-white font-medium text-center`}>Search</Text>

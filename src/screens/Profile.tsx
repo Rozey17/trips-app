@@ -3,8 +3,10 @@ import React from "react";
 import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Profile = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={s`flex-1 p-4 bg-white`}>
       <View style={s`flex-row items-center my-5`}>
@@ -18,18 +20,12 @@ const Profile = () => {
           <Text numberOfLines={1} style={styles.title}>
             Bouiti Viodo
           </Text>
-          <Text
-            style={[
-              { fontFamily: "catamaran-regular", fontSize: 16 },
-              s`text-gray-400`,
-            ]}
-          >
-            Lorem ipsum dolor sit, amet
-          </Text>
+          <Text style={styles.text2}>Lorem ipsum dolor sit, amet</Text>
         </View>
       </View>
       <Pressable
         style={s`flex-row items-center justify-between py-5 border-t  border-gray-200 `}
+        onPress={() => navigation.navigate("PersonalInfo")}
       >
         <View style={s`flex-row items-center `}>
           <Feather name="user" size={24} color="#9ca3af" />
@@ -98,5 +94,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 16,
     // textTransform:'capitalize'
+  },
+  text2: {
+    fontFamily: "catamaran-regular",
+    fontSize: 16,
+    color: "#9ca3af",
   },
 });

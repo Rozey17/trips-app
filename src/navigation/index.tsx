@@ -9,6 +9,7 @@ import Trips from "../screens/Trips";
 import Inbox from "../screens/Inbox";
 import Profile from "../screens/Profile";
 import Localization from "../screens/Localization";
+import PersonalInfo from "../screens/PersonalInfo";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,9 +27,24 @@ const RootNavigator = () => {
       <Stack.Screen name="Wishlist" component={Wishlist} />
       <Stack.Screen name="Trips" component={Trips} />
       <Stack.Screen name="Inbox" component={Inbox} />
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="ProfileScreen" component={ProfileStack} />
       <Stack.Screen name="Localization" component={Localization} />
+      <Stack.Screen name="PersonalInfo" component={PersonalInfo} />
     </Stack.Navigator>
+  );
+};
+
+const ProfileStackNavigator = createNativeStackNavigator();
+
+const ProfileStack = () => {
+  return (
+    <ProfileStackNavigator.Navigator>
+      <ProfileStackNavigator.Screen name="Profile" component={Profile} />
+      <ProfileStackNavigator.Screen
+        name="PersonalInfo"
+        component={PersonalInfo}
+      />
+    </ProfileStackNavigator.Navigator>
   );
 };
 
