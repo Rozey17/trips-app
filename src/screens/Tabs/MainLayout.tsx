@@ -110,7 +110,7 @@ export default function MainLayout() {
         ))}
       </View>
 
-      {selectedBottomTab == "Inbox" && <StatusBar barStyle="light-content" />}
+      {/* {selectedBottomTab == "Inbox" && <StatusBar barStyle="light-content" />} */}
       {selectedBottomTab == "Search" && <StatusBar barStyle="light-content" />}
       {/* {selectedBottomTab == "Profile" && <StatusBar barStyle="light-content" />} */}
       {selectedBottomTab == "Trips" && <StatusBar barStyle="light-content" />}

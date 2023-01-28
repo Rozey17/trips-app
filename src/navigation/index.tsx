@@ -10,7 +10,8 @@ import Inbox from "../screens/Inbox";
 import Profile from "../screens/Profile";
 import Localization from "../screens/Localization";
 import PersonalInfo from "../screens/PersonalInfo";
-
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { FontAwesome5 } from "@expo/vector-icons";
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
@@ -46,6 +47,108 @@ const ProfileStack = () => {
       />
     </ProfileStackNavigator.Navigator>
   );
+};
+
+const BottomTabNavigator = createBottomTabNavigator();
+
+const BottomTabStack = () => {
+  <BottomTabNavigator.Navigator>
+    <BottomTabNavigator.Screen
+      name="Search"
+      component={Search}
+      options={{
+        tabBarIcon: () => (
+          <FontAwesome5
+            name="search"
+            size={20}
+            // color={selectedBottomTab == "Search" ? "#38bdf8" : "#9ca3af"}
+          />
+        ),
+        tabBarLabelStyle: {
+          fontFamily: "catamaran-medium",
+          textTransform: "uppercase",
+          fontSize: 12,
+          marginTop: 5,
+        },
+      }}
+    />
+    <BottomTabNavigator.Screen
+      name="Wishlist"
+      component={Wishlist}
+      options={{
+        tabBarIcon: () => (
+          <FontAwesome5
+            name="heart"
+            size={20}
+            // color={selectedBottomTab == "Wishlist" ? "#38bdf8" : "#9ca3af"}
+          />
+        ),
+        tabBarLabelStyle: {
+          fontFamily: "catamaran-medium",
+          textTransform: "uppercase",
+          fontSize: 12,
+          marginTop: 5,
+        },
+      }}
+    />{" "}
+    <BottomTabNavigator.Screen
+      name="Search"
+      component={Search}
+      options={{
+        tabBarIcon: () => (
+          <FontAwesome5
+            name="search"
+            size={20}
+            // color={selectedBottomTab == "Search" ? "#38bdf8" : "#9ca3af"}
+          />
+        ),
+        tabBarLabelStyle: {
+          fontFamily: "catamaran-medium",
+          textTransform: "uppercase",
+          fontSize: 12,
+          marginTop: 5,
+        },
+      }}
+    />{" "}
+    <BottomTabNavigator.Screen
+      name="Search"
+      component={Search}
+      options={{
+        tabBarIcon: () => (
+          <FontAwesome5
+            name="search"
+            size={20}
+            // color={selectedBottomTab == "Search" ? "#38bdf8" : "#9ca3af"}
+          />
+        ),
+        tabBarLabelStyle: {
+          fontFamily: "catamaran-medium",
+          textTransform: "uppercase",
+          fontSize: 12,
+          marginTop: 5,
+        },
+      }}
+    />{" "}
+    <BottomTabNavigator.Screen
+      name="Search"
+      component={Search}
+      options={{
+        tabBarIcon: () => (
+          <FontAwesome5
+            name="search"
+            size={20}
+            // color={selectedBottomTab == "Search" ? "#38bdf8" : "#9ca3af"}
+          />
+        ),
+        tabBarLabelStyle: {
+          fontFamily: "catamaran-medium",
+          textTransform: "uppercase",
+          fontSize: 12,
+          marginTop: 5,
+        },
+      }}
+    />
+  </BottomTabNavigator.Navigator>;
 };
 
 const Navigation = () => {
