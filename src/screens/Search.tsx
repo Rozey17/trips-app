@@ -2,19 +2,31 @@ import {
   View,
   Text,
   ScrollView,
-  TextInput,
   TouchableOpacity,
+  RefreshControl,
 } from "react-native";
 import React, { useState } from "react";
 import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign, Entypo, FontAwesome5 } from "@expo/vector-icons";
 import Header from "../components/Header";
-import { Button } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 import Modal from "react-native-modal";
+import Navigation from "../navigation";
+import { useNavigation } from "@react-navigation/native";
 
 const Search = () => {
   const [showInfoModal, setShowInfoModal] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+  const navigation = useNavigation();
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  };
+
   function renderInfoModal() {
     return (
       <Modal
@@ -104,14 +116,38 @@ const Search = () => {
     <View style={s`flex-1`}>
       <Header />
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={() => onRefresh()}
+          />
+        }
+      >
         <View
           style={s`mx-2 my-4 bg-white px-2 py-4 h-92 rounded-md border border-gray-300`}
         >
-          <TextInput
+          {/* <TextInput
             style={s`rounded border border-gray-300 py-2 px-4`}
             placeholder="From ..."
-          />
+          /> */}
+
+          {/* <TextInput
+            mode="outlined"
+            label="from"
+            placeholder="example Paris"
+            // value={text}
+            // onChangeText={(text) => setText(text)}
+          /> */}
+          <TouchableOpacity
+            style={s`p-3 rounded mt-5 border border-gray-300`}
+            //@ts-ignore
+            onPress={() => navigation.navigate("Localization")}
+          >
+            <Text>De</Text>
+          </TouchableOpacity>
+
           <TextInput
             style={s`rounded border border-gray-300 py-2 px-4 mt-4`}
             placeholder="To ..."

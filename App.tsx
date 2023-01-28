@@ -2,17 +2,27 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
 import "react-native-gesture-handler";
 import { Provider } from "react-redux";
-import Toast, { BaseToast } from "react-native-toast-message";
-import { s } from "react-native-wind";
+import AppLoading from "expo-app-loading";
 import { Provider as PaperProvider } from "react-native-paper";
 import useCachedResources from "./src/hooks/useCachedResources";
 import Navigation from "./src/navigation";
 import { ToastProvider } from "react-native-toast-notifications";
 import { store } from "./src/store/store";
+import { useFonts } from "expo-font";
 
 export default function App() {
-  const isLoadingComplete = useCachedResources();
-  if (!isLoadingComplete) {
+  let [fontsLoaded] = useFonts({
+    "josefinSans-thin": require("./assets/fonts/JosefinSans-Thin.ttf"),
+    "josefinSans-light": require("./assets/fonts/JosefinSans-Light.ttf"),
+    "josefinSans-regular": require("./assets/fonts/JosefinSans-Regular.ttf"),
+    "josefinSans-medium": require("./assets/fonts/JosefinSans-Medium.ttf"),
+    "josefinSans-semibold": require("./assets/fonts/JosefinSans-SemiBold.ttf"),
+    "josefinSans-bold": require("./assets/fonts/JosefinSans-Bold.ttf"),
+    "catamaran-regular": require("./assets/fonts/Catamaran-Regular.ttf"),
+    "catamaran-medium": require("./assets/fonts/Catamaran-Medium.ttf"),
+  });
+  // const isLoadingComplete = useCachedResources();
+  if (!fontsLoaded) {
     return null;
   } else {
     return (

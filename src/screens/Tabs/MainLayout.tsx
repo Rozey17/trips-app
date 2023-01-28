@@ -21,7 +21,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="search"
           size={20}
-          color={selectedBottomTab == "Search" ? "#fb7185" : "#9ca3af"}
+          color={selectedBottomTab == "Search" ? "#38bdf8" : "#9ca3af"}
         />
       ),
     },
@@ -32,7 +32,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="heart"
           size={20}
-          color={selectedBottomTab == "Wishlist" ? "#fb7185" : "#9ca3af"}
+          color={selectedBottomTab == "Wishlist" ? "#38bdf8" : "#9ca3af"}
         />
       ),
     },
@@ -43,7 +43,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="suitcase"
           size={20}
-          color={selectedBottomTab == "Trips" ? "#fb7185" : "#9ca3af"}
+          color={selectedBottomTab == "Trips" ? "#38bdf8" : "#9ca3af"}
         />
       ),
     },
@@ -54,7 +54,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="inbox"
           size={20}
-          color={selectedBottomTab == "Inbox" ? "#fb7185" : "#9ca3af"}
+          color={selectedBottomTab == "Inbox" ? "#38bdf8" : "#9ca3af"}
         />
       ),
     },
@@ -65,7 +65,7 @@ export default function MainLayout() {
         <FontAwesome5
           name="user-circle"
           size={20}
-          color={selectedBottomTab == "Profile" ? "#fb7185" : "#9ca3af"}
+          color={selectedBottomTab == "Profile" ? "#38bdf8" : "#9ca3af"}
         />
       ),
     },
@@ -96,11 +96,11 @@ export default function MainLayout() {
 
               <Text
                 style={{
-                  fontFamily: "jost-medium",
-                  fontSize: 14,
-                  // lineHeight: 21,
+                  fontFamily: "catamaran-medium",
+                  textTransform: "uppercase",
+                  fontSize: 12,
                   marginTop: 5,
-                  color: selectedBottomTab == item.text ? "#fb7185" : "#9ca3af",
+                  color: selectedBottomTab == item.text ? "#38bdf8" : "#9ca3af",
                 }}
               >
                 {item.text}
@@ -112,11 +112,9 @@ export default function MainLayout() {
 
       {selectedBottomTab == "Inbox" && <StatusBar barStyle="light-content" />}
       {selectedBottomTab == "Search" && <StatusBar barStyle="light-content" />}
-      {selectedBottomTab == "Profile" && <StatusBar barStyle="light-content" />}
+      {/* {selectedBottomTab == "Profile" && <StatusBar barStyle="light-content" />} */}
       {selectedBottomTab == "Trips" && <StatusBar barStyle="light-content" />}
-      {selectedBottomTab == "Wishlist" && (
-        <StatusBar barStyle="light-content" />
-      )}
+      {selectedBottomTab == "Wishlist" && <StatusBar barStyle="dark-content" />}
     </View>
   );
 }

@@ -6,13 +6,11 @@ import Header from "../components/Header";
 
 const Wishlist = () => {
   return (
-    <View style={s`flex-1`}>
-      <Header />
-
+    <SafeAreaView style={s`flex-1 p-5`}>
       <View style={s``}>
         <Text>Wishlist</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

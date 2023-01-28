@@ -8,6 +8,7 @@ import Wishlist from "../screens/Wishlist";
 import Trips from "../screens/Trips";
 import Inbox from "../screens/Inbox";
 import Profile from "../screens/Profile";
+import Localization from "../screens/Localization";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,8 +19,6 @@ const RootNavigator = () => {
       screenOptions={{
         gestureEnabled: false,
         headerShown: false,
-        //@ts-ignore
-        cardStyle: { backgroundColor: "white" },
       }}
     >
       <Stack.Screen name="MainLayout" component={MainLayout} />
@@ -28,6 +27,7 @@ const RootNavigator = () => {
       <Stack.Screen name="Trips" component={Trips} />
       <Stack.Screen name="Inbox" component={Inbox} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Localization" component={Localization} />
     </Stack.Navigator>
   );
 };
