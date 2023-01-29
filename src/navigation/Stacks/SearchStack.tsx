@@ -3,6 +3,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Search from "../../screens/Search";
 import Localization from "../../screens/Localization";
+import SearchResults from "../../screens/SearchResults";
 
 const SearchStackNavigator = createNativeStackNavigator();
 
@@ -13,6 +14,10 @@ const SearchStack = () => {
       <SearchStackNavigator.Screen
         name="Localization"
         component={Localization}
+      />
+      <SearchStackNavigator.Screen
+        name="SearchResults"
+        component={SearchResults}
       />
     </SearchStackNavigator.Navigator>
   );

@@ -40,6 +40,7 @@ const Profile = () => {
       </View>
       <Pressable
         style={s`flex-row items-center justify-between py-5 border-t  border-gray-200 `}
+        //@ts-ignore
         onPress={() => navigation.navigate("PersonalInfo")}
       >
         <View style={s`flex-row items-center `}>
@@ -59,6 +60,7 @@ const Profile = () => {
       </Pressable>
       <Pressable
         style={s`flex-row items-center justify-between py-5  border-b border-gray-200`}
+        //@ts-ignore
         onPress={() => navigation.navigate("PaymentMethod")}
       >
         <View style={s`flex-row items-center `}>
@@ -82,6 +84,15 @@ const Profile = () => {
         <View style={s`flex-row items-center `}>
           <Feather name="help-circle" size={24} color="#9ca3af" />
           <Text style={styles.text}>FAQ</Text>
+        </View>
+        <Feather name="chevron-right" size={20} color="black" />
+      </Pressable>
+      <Pressable
+        style={s`flex-row items-center justify-between py-5  border-b border-gray-200`}
+      >
+        <View style={s`flex-row items-center `}>
+          <Feather name="settings" size={24} color="#9ca3af" />
+          <Text style={styles.text}>Settings</Text>
         </View>
         <Feather name="chevron-right" size={20} color="black" />
       </Pressable>
