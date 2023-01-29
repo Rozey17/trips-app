@@ -1,4 +1,11 @@
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Pressable,
+  StatusBar,
+} from "react-native";
 import React, { useLayoutEffect } from "react";
 import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,6 +22,8 @@ const Profile = () => {
   }, []);
   return (
     <SafeAreaView style={s`flex-1 p-4 bg-white`}>
+      <StatusBar barStyle="dark-content" />
+
       <View style={s`flex-row items-center my-5`}>
         <Image
           source={{

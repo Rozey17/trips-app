@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, Pressable, StyleSheet } from "react-native";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { s } from "react-native-wind";
 import { useNavigation } from "@react-navigation/native";
 import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
@@ -7,6 +7,11 @@ import FindCityHeader from "../components/FindCityHeader";
 
 const Localization = () => {
   const navigation = useNavigation();
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, []);
 
   return (
     <View style={s`flex-1`}>

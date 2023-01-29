@@ -6,7 +6,7 @@ import Header from "../components/Header";
 
 const Wishlist = () => {
   return (
-    <SafeAreaView style={s`flex-1 p-5`}>
+    <SafeAreaView style={s`flex-1 p-5 bg-white`}>
       <View style={s``}>
         <Text style={styles.title}>Wishlist</Text>
       </View>

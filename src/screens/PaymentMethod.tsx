@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Pressable,
   Image,
+  StatusBar,
 } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -25,6 +26,8 @@ const PaymentMethod = () => {
   }, []);
   return (
     <SafeAreaView style={s`h-full bg-white`}>
+      <StatusBar barStyle="dark-content" />
+
       <View style={s`flex-row px-5 py-4 items-center justify-between`}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />

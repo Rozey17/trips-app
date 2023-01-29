@@ -6,6 +6,7 @@ import {
   ScrollView,
   Image,
   TextInput,
+  StatusBar,
 } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -22,6 +23,8 @@ const PersonalInfo = () => {
   }, []);
   return (
     <SafeAreaView style={s`bg-white h-full `}>
+      <StatusBar barStyle="dark-content" />
+
       <View style={s`flex-row px-5 py-4 items-center justify-between`}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="black" />
