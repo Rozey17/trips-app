@@ -84,7 +84,7 @@ const Search = () => {
                 <Text
                   style={{
                     fontFamily: "catamaran-medium",
-                    fontSize: 20,
+                    fontSize: 17,
                     marginLeft: 10,
                   }}
                 >
@@ -115,7 +115,7 @@ const Search = () => {
                 <Text
                   style={{
                     fontFamily: "catamaran-medium",
-                    fontSize: 20,
+                    fontSize: 17,
                     marginLeft: 10,
                   }}
                 >
