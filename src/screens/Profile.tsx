@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     // fontWeight: "bold",
   },
   text: {
-    fontFamily: "catamaran-regular",
+    fontFamily: "catamaran-medium",
     marginLeft: 10,
     fontSize: 16,
     // textTransform:'capitalize'

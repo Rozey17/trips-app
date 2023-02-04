@@ -59,11 +59,13 @@ const Search = () => {
         onBackdropPress={() => setShowInfoModal(false)}
         hideModalContentWhileAnimating={true}
         backdropTransitionOutTiming={0}
-        // style={s`w-5/6 ml-auto`}
-        style={[{ marginLeft: "auto", marginRight: "auto" }, s`w-5/6`]}
+        style={s`m-0`}
+        // style={[{ marginLeft: "auto", marginRight: "auto" }, s`w-5/6`]}
       >
         {/* Content */}
-        <View style={s`bg-white p-5 h-80 w-full  -xl`}>
+        <View
+          style={s`bg-white absolute bottom-0 p-5 h-80 w-full rounded-tr-xl rounded-tl-xl`}
+        >
           <TouchableOpacity
             style={{
               position: "absolute",
@@ -93,7 +95,7 @@ const Search = () => {
               <View style={s`flex-row items-center w-32 justify-between`}>
                 <TouchableOpacity
                   onPress={removeAnAdult}
-                  style={s`-full  w-10 h-10 flex-row items-center justify-center border border-teal-400`}
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-teal-400`}
                 >
                   <AntDesign name="minus" size={18} color="black" />
                 </TouchableOpacity>
@@ -102,7 +104,7 @@ const Search = () => {
                 </Text>
                 <TouchableOpacity
                   onPress={addAnAdult}
-                  style={s`-full  w-10 h-10 flex-row items-center justify-center border border-teal-400`}
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-teal-400`}
                 >
                   <AntDesign name="plus" size={18} color="black" />
                 </TouchableOpacity>
@@ -124,7 +126,7 @@ const Search = () => {
               <View style={s`flex-row items-center w-32 justify-between`}>
                 <TouchableOpacity
                   onPress={removeAChild}
-                  style={s`-full  w-10 h-10 flex-row items-center justify-center border border-teal-400`}
+                  style={s`rounded-full  w-10 h-10 flex-row items-center justify-center border border-teal-400`}
                 >
                   <AntDesign name="minus" size={18} color="black" />
                 </TouchableOpacity>
@@ -160,7 +162,7 @@ const Search = () => {
     );
   }
   return (
-    <View style={s`flex-1`}>
+    <View>
       <StatusBar barStyle="light-content" />
       <Header />
 
@@ -173,9 +175,9 @@ const Search = () => {
           />
         }
       >
-        <View style={s`mx-2 my-4 bg-white p-3 h-92  border border-gray-300`}>
+        <View style={s`mx-2 my-4 bg-white p-4  border border-gray-300`}>
           <TouchableOpacity
-            style={s`p-3 mt-5 border border-gray-300`}
+            style={s`p-3 border border-gray-300`}
             //@ts-ignore
             onPress={() => navigation.navigate("Localization")}
           >
@@ -190,7 +192,17 @@ const Search = () => {
             <Text>To</Text>
           </TouchableOpacity>
 
-          <DatePicker />
+          <View style={s`flex-row items-center mt-5`}>
+            <View style={s`w-2/5 mr-3`}>
+              <Text>Aller</Text>
+              <DatePicker />
+            </View>
+
+            <View style={s`flex-1`}>
+              <Text>Retour</Text>
+              <DatePicker />
+            </View>
+          </View>
 
           <TouchableOpacity
             style={s`p-3  mt-5 border border-gray-300`}
@@ -200,10 +212,20 @@ const Search = () => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={s`p-4 mt-5 bg-teal-500`}
-            // onPress={() => setShowInfoModal(!showInfoModal)}
+            style={s`py-3 mt-5 bg-teal-500`}
+            //@ts-ignore
+            onPress={() => navigation.navigate("SearchResults")}
           >
-            <Text style={s` text-white font-medium text-center`}>Search</Text>
+            <Text
+              style={{
+                fontFamily: "catamaran-medium",
+                textAlign: "center",
+                color: "white",
+                fontSize: 17,
+              }}
+            >
+              Search
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

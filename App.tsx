@@ -7,6 +7,7 @@ import Navigation from "./src/navigation/RootNavigation";
 import { ToastProvider } from "react-native-toast-notifications";
 import { store } from "./src/store/store";
 import { useFonts } from "expo-font";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -18,20 +19,25 @@ export default function App() {
     "josefinSans-bold": require("./assets/fonts/JosefinSans-Bold.ttf"),
     "catamaran-regular": require("./assets/fonts/Catamaran-Regular.ttf"),
     "catamaran-medium": require("./assets/fonts/Catamaran-Medium.ttf"),
+    "catamaran-semibold": require("./assets/fonts/Catamaran-SemiBold.ttf"),
+    "catamaran-bold": require("./assets/fonts/Catamaran-Bold.ttf"),
+    "catamaran-black": require("./assets/fonts/Catamaran-Black.ttf"),
   });
-  // const isLoadingComplete = useCachedResources();
+
   if (!fontsLoaded) {
     return null;
   } else {
     return (
-      <ToastProvider>
-        <PaperProvider>
+      // <ToastProvider>
+      <PaperProvider>
+        <SafeAreaProvider>
           <Provider store={store}>
             <Navigation />
             <StatusBar style="auto" />
           </Provider>
-        </PaperProvider>
-      </ToastProvider>
+        </SafeAreaProvider>
+      </PaperProvider>
+      // </ToastProvider>
     );
   }
 }

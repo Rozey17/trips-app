@@ -32,7 +32,7 @@ const DatePicker = () => {
   return (
     <TouchableOpacity
       onPress={showDatepicker}
-      style={s`py-3 px-4 mt-5 border flex-row items-center`}
+      style={s`py-3 px-4 border border-gray-300 flex-row items-center`}
     >
       <FontAwesome5 name="calendar-alt" size={24} color="black" />
       <Text style={s`ml-5`}> {date.toLocaleDateString()}</Text>

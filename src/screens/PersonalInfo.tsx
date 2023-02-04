@@ -46,20 +46,32 @@ const PersonalInfo = () => {
           </TouchableOpacity>
         </View>
         <TextInput
-          style={s`border border-gray-300 px-4 py-2 mb-5`}
-          placeholder="name"
+          style={[
+            { fontFamily: "catamaran-regular" },
+            s`border border-gray-300 px-4 py-2 mb-5`,
+          ]}
+          placeholder="Name"
         />
         <TextInput
-          style={s`border border-gray-300 px-4 py-2 mb-5`}
-          placeholder="name"
+          style={[
+            { fontFamily: "catamaran-regular" },
+            s`border border-gray-300 px-4 py-2 mb-5`,
+          ]}
+          placeholder="Email"
         />
         <TextInput
-          style={s`border border-gray-300 px-4 py-2 mb-5`}
-          placeholder="name"
+          style={[
+            { fontFamily: "catamaran-regular" },
+            s`border border-gray-300 px-4 py-2 mb-5`,
+          ]}
+          placeholder="Phone number"
         />
         <TextInput
-          style={s`border border-gray-300 px-4 py-2 mb-5`}
-          placeholder="name"
+          style={[
+            { fontFamily: "catamaran-regular" },
+            s`border border-gray-300 px-4 py-2 mb-5`,
+          ]}
+          placeholder="Location"
         />
         <TouchableOpacity style={s`px-4 py-2 bg-teal-500`}>
           <Text style={styles.button_text}>Save</Text>

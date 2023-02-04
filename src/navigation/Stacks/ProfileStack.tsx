@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AddCreditCard from "../../screens/AddCreditCard";
 import PaymentMethod from "../../screens/PaymentMethod";
 import PersonalInfo from "../../screens/PersonalInfo";
 import Profile from "../../screens/Profile";
@@ -16,6 +17,11 @@ const ProfileStack = () => {
       <ProfileStackNavigator.Screen
         name="PaymentMethod"
         component={PaymentMethod}
+      />
+      <ProfileStackNavigator.Screen
+        name="AddCreditCard"
+        component={AddCreditCard}
+        options={{ headerShown: false }}
       />
     </ProfileStackNavigator.Navigator>
   );

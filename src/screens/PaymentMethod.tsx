@@ -13,9 +13,13 @@ import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { s } from "react-native-wind";
 import { Entypo, Ionicons } from "@expo/vector-icons";
+//@ts-ignore
 import GooglePay from "../../assets/images/google-pay-svgrepo-com.svg";
+//@ts-ignore
 import ApplePay from "../../assets/images/apple-pay-logo-svgrepo-com.svg";
+//@ts-ignore
 import PayPal from "../../assets/images/paypal-3-svgrepo-com.svg";
+
 const PaymentMethod = () => {
   const navigation = useNavigation();
 
@@ -35,6 +39,7 @@ const PaymentMethod = () => {
         <Text style={styles.title}>payment method</Text>
         <Ionicons name="arrow-back" size={24} color="white" />
       </View>
+
       <ScrollView style={s`p-5`}>
         <Pressable
           style={s`flex-row items-center justify-between border-t border-b border-gray-300 py-2`}
@@ -55,13 +60,15 @@ const PaymentMethod = () => {
           <PayPal />
           <Text>Add +</Text>
         </Pressable>
-        <TouchableOpacity
+        
+        <TouchableOpacity onPress={()=>navigation.navigate('AddCreditCard')}
           style={s`bg-gray-200 py-3 flex-row items-center justify-center mt-5`}
         >
           <Entypo name="plus" size={24} color="#2dd4bf" />
           <Text style={styles.text}>add a credit card</Text>
         </TouchableOpacity>
       </ScrollView>
+      
     </SafeAreaView>
   );
 };

@@ -1,12 +1,10 @@
-import { Feather } from "@expo/vector-icons";
 import Icon from "@expo/vector-icons/FontAwesome5";
-import Inbox from "../../screens/Inbox";
-import Search from "../../screens/Search";
-import Trips from "../../screens/Trips";
-import Wishlist from "../../screens/Wishlist";
 import ProfileStack from "../Stacks/ProfileStack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import SearchStack from "../Stacks/SearchStack";
+import Booking from "../../screens/Booking";
+import Tickets from "../../screens/Tickets";
+import Notifications from "../../screens/Notifications";
 
 type TabNavigationProps = {};
 type TabBarIconProps = {
@@ -23,11 +21,14 @@ const renderTabBarIcon = (routeName: string) => {
       case "Search":
         iconName = "search";
         break;
-      case "Wishlist":
-        iconName = "heart";
+      case "Booking":
+        iconName = "book-open";
         break;
-      case "Trips":
-        iconName = "suitcase";
+      case "Tickets":
+        iconName = "ticket-alt";
+        break;
+      case "Notifications":
+        iconName = "bell";
         break;
       case "Profile":
         iconName = "user-circle";
@@ -52,7 +53,7 @@ const TabNavigation = () => {
           tabBarIcon: renderTabBarIcon(routeName),
           tabBarStyle: {
             paddingVertical: 5,
-            paddingHorizontal: 10,
+            // paddingHorizontal: 5,
           },
           headerShown: false,
         };
@@ -70,8 +71,8 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Wishlist"
-        component={Wishlist}
+        name="Booking"
+        component={Booking}
         options={{
           tabBarLabelStyle: {
             fontFamily: "catamaran-medium",
@@ -81,8 +82,8 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Trips"
-        component={Trips}
+        name="Tickets"
+        component={Tickets}
         options={{
           tabBarLabelStyle: {
             fontFamily: "catamaran-medium",
@@ -92,12 +93,9 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Inbox"
-        component={Inbox}
+        name="Notifications"
+        component={Notifications}
         options={{
-          tabBarIcon: ({ color }) => (
-            <Feather name="message-circle" size={24} color={color} />
-          ),
           tabBarLabelStyle: {
             fontFamily: "catamaran-medium",
             textTransform: "uppercase",

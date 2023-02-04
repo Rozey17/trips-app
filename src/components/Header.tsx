@@ -17,8 +17,8 @@ const Header = () => {
             style={[
               {
                 fontFamily: "josefinSans-bold",
-                fontSize: 25,
-                textTransform: "uppercase",
+                fontSize: 30,
+                // textTransform: "uppercase",
               },
               s` p-2 pt-3  text-white`,
             ]}
