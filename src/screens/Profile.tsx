@@ -1,5 +1,12 @@
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Pressable,
+  StatusBar,
+} from "react-native";
+import React, { useLayoutEffect } from "react";
 import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
@@ -7,8 +14,16 @@ import { useNavigation } from "@react-navigation/native";
 
 const Profile = () => {
   const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, []);
   return (
     <SafeAreaView style={s`flex-1 p-4 bg-white`}>
+      <StatusBar barStyle="dark-content" />
+
       <View style={s`flex-row items-center my-5`}>
         <Image
           source={{
@@ -25,6 +40,7 @@ const Profile = () => {
       </View>
       <Pressable
         style={s`flex-row items-center justify-between py-5 border-t  border-gray-200 `}
+        //@ts-ignore
         onPress={() => navigation.navigate("PersonalInfo")}
       >
         <View style={s`flex-row items-center `}>
@@ -44,6 +60,8 @@ const Profile = () => {
       </Pressable>
       <Pressable
         style={s`flex-row items-center justify-between py-5  border-b border-gray-200`}
+        //@ts-ignore
+        onPress={() => navigation.navigate("PaymentMethod")}
       >
         <View style={s`flex-row items-center `}>
           <Feather name="credit-card" size={24} color="#9ca3af" />
@@ -73,6 +91,15 @@ const Profile = () => {
         style={s`flex-row items-center justify-between py-5  border-b border-gray-200`}
       >
         <View style={s`flex-row items-center `}>
+          <Feather name="settings" size={24} color="#9ca3af" />
+          <Text style={styles.text}>Settings</Text>
+        </View>
+        <Feather name="chevron-right" size={20} color="black" />
+      </Pressable>
+      <Pressable
+        style={s`flex-row items-center justify-between py-5  border-b border-gray-200`}
+      >
+        <View style={s`flex-row items-center `}>
           <Feather name="log-out" size={24} color="#9ca3af" />
           <Text style={styles.text}>Sign out</Text>
         </View>
@@ -90,7 +117,7 @@ const styles = StyleSheet.create({
     // fontWeight: "bold",
   },
   text: {
-    fontFamily: "catamaran-regular",
+    fontFamily: "catamaran-medium",
     marginLeft: 10,
     fontSize: 16,
     // textTransform:'capitalize'
