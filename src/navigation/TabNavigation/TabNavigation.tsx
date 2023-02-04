@@ -4,7 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import SearchStack from "../Stacks/SearchStack";
 import Booking from "../../screens/Booking";
 import Tickets from "../../screens/Tickets";
-import Notifications from "../../screens/Notifications";
+import Notifications from "../../screens/Support";
+import Support from "../../screens/Support";
 
 type TabNavigationProps = {};
 type TabBarIconProps = {
@@ -27,8 +28,8 @@ const renderTabBarIcon = (routeName: string) => {
       case "Tickets":
         iconName = "ticket-alt";
         break;
-      case "Notifications":
-        iconName = "bell";
+      case "Support":
+        iconName = "headset";
         break;
       case "Profile":
         iconName = "user-circle";
@@ -93,8 +94,8 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Support"
+        component={Support}
         options={{
           tabBarLabelStyle: {
             fontFamily: "catamaran-medium",

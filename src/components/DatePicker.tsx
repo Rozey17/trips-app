@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Pressable } from "react-native";
 import React, { useState } from "react";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 import { Button } from "react-native-paper";
@@ -30,13 +30,18 @@ const DatePicker = () => {
     showMode("time");
   };
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={showDatepicker}
-      style={s`py-3 px-4 border border-gray-300 flex-row items-center`}
+      style={s`py-3 px-4 border border-gray-300 flex-row items-center bg-white`}
     >
       <FontAwesome5 name="calendar-alt" size={24} color="black" />
-      <Text style={s`ml-5`}> {date.toLocaleDateString()}</Text>
-    </TouchableOpacity>
+      <Text
+        style={{ fontFamily: "catamaran-medium", marginLeft: 10, fontSize: 17 }}
+      >
+        {" "}
+        {date.toLocaleDateString()}
+      </Text>
+    </Pressable>
   );
 };
 

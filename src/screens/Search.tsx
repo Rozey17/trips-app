@@ -4,7 +4,8 @@ import {
   ScrollView,
   TouchableOpacity,
   RefreshControl,
-  StatusBar,
+  ImageBackground,
+  // TextInput,
 } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
 import { s } from "react-native-wind";
@@ -14,13 +15,22 @@ import Modal from "react-native-modal";
 import Navigation from "../navigation/RootNavigation";
 import { useNavigation } from "@react-navigation/native";
 import DatePicker from "../components/DatePicker";
+import { StatusBar } from "expo-status-bar";
+import DropDownPicker from "react-native-dropdown-picker";
+import { TextInput } from "react-native-paper";
 
 const Search = () => {
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [numberOfAdults, setNumberOfAdults] = useState(1);
   const [numberOfChildren, setNumberOfChildren] = useState(1);
-
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const [items, setItems] = useState([
+    { label: "Bus", value: "Bus" },
+    { label: "Train", value: "Train" },
+    { label: "Plain", value: "Plain" },
+  ]);
   const addAnAdult = () => {
     setNumberOfAdults(numberOfAdults + 1);
   };
@@ -162,55 +172,122 @@ const Search = () => {
     );
   }
   return (
-    <View>
-      <StatusBar barStyle="light-content" />
-      <Header />
+    <ImageBackground
+      source={{
+        uri: "https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg",
+      }}
+      style={s`h-full`}
+    >
+      <View style={s`flex-1 `}>
+        <View style={s`p-5`}>
+          {/* <View style={s` bg-white p-4  border border-gray-300`}>
+            <TouchableOpacity
+              style={s`p-3 border border-gray-300`}
+              //@ts-ignore
+              onPress={() => navigation.navigate("Localization")}
+            >
+              <Text>From</Text>
+            </TouchableOpacity>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={() => onRefresh()}
-          />
-        }
-      >
-        <View style={s`mx-2 my-4 bg-white p-4  border border-gray-300`}>
-          <TouchableOpacity
-            style={s`p-3 border border-gray-300`}
-            //@ts-ignore
-            onPress={() => navigation.navigate("Localization")}
-          >
-            <Text>From</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={s`p-3  mt-5 border border-gray-300`}
+              //@ts-ignore
+              onPress={() => navigation.navigate("Localization")}
+            >
+              <Text>To</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            style={s`p-3  mt-5 border border-gray-300`}
-            //@ts-ignore
-            onPress={() => navigation.navigate("Localization")}
-          >
-            <Text>To</Text>
-          </TouchableOpacity>
+            <View style={s`flex-row items-center mt-5`}>
+              <View style={s`w-2/5 mr-3`}>
+                <Text>Aller</Text>
+                <DatePicker />
+              </View>
 
-          <View style={s`flex-row items-center mt-5`}>
-            <View style={s`w-2/5 mr-3`}>
-              <Text>Aller</Text>
-              <DatePicker />
+              <View style={s`flex-1`}>
+                <Text>Retour</Text>
+                <DatePicker />
+              </View>
             </View>
 
-            <View style={s`flex-1`}>
-              <Text>Retour</Text>
-              <DatePicker />
+            <TouchableOpacity
+              style={s`p-3  my-5 border border-gray-300`}
+              onPress={() => setShowInfoModal(!showInfoModal)}
+            >
+              <Text>1 adult</Text>
+            </TouchableOpacity>
+
+            <DropDownPicker
+              open={open}
+              value={value}
+              items={items}
+              setOpen={setOpen}
+              setValue={setValue}
+              setItems={setItems}
+              placeholder="- Select Transportation Mode - "
+              style={s` rounded-none border border-gray-300`}
+              dropDownContainerStyle={[
+                { fontFamily: "catamaran-regular", fontSize: 16 },
+                s` rounded-none border border-gray-300`,
+              ]}
+              textStyle={{
+                fontFamily: "catamaran-regular",
+                fontSize: 16,
+              }}
+            />
+
+            <TouchableOpacity
+              style={s`py-3 mt-5 bg-teal-500`}
+              //@ts-ignore
+              onPress={() => navigation.navigate("SearchResults")}
+            >
+              <Text
+                style={{
+                  fontFamily: "catamaran-medium",
+                  textAlign: "center",
+                  color: "white",
+                  fontSize: 17,
+                }}
+              >
+                Search
+              </Text>
+            </TouchableOpacity>
+          </View> */}
+          <Text
+            style={{
+              fontFamily: "catamaran-black",
+              marginTop: 80,
+              marginBottom: 120,
+              fontSize: 50,
+              textAlign: "center",
+              color: "white",
+            }}
+          >
+            TicketGo
+          </Text>
+          <Text
+            style={{
+              fontFamily: "catamaran-semibold",
+              marginVertical: 30,
+              fontSize: 20,
+              textAlign: "center",
+              color: "white",
+            }}
+          >
+            Book tickets accross the country
+          </Text>
+          <View style={s`p-3 bg-white mb-5`}>
+            <View style={s``}>
+              <TextInput
+                left={<TextInput.Icon icon="map-marker" />}
+                placeholder="departure"
+              />
+              <TextInput
+                left={<TextInput.Icon icon="map-marker" />}
+                placeholder="destination"
+              />
             </View>
           </View>
-
-          <TouchableOpacity
-            style={s`p-3  mt-5 border border-gray-300`}
-            onPress={() => setShowInfoModal(!showInfoModal)}
-          >
-            <Text>1 adult</Text>
-          </TouchableOpacity>
-
+          <DatePicker />
           <TouchableOpacity
             style={s`py-3 mt-5 bg-teal-500`}
             //@ts-ignore
@@ -228,9 +305,9 @@ const Search = () => {
             </Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
-      {renderInfoModal()}
-    </View>
+        {renderInfoModal()}
+      </View>
+    </ImageBackground>
   );
 };
 

@@ -4,17 +4,17 @@ import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/Header";
 
-const Notifications = () => {
+const Support = () => {
   return (
     <SafeAreaView style={s`flex-1 p-5 bg-white`}>
       <View style={s``}>
-        <Text style={styles.title}>Notifications</Text>
+        <Text style={styles.title}>Support</Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Notifications;
+export default Support;
 
 const styles = StyleSheet.create({
   title: {
