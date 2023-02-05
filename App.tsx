@@ -33,7 +33,7 @@ export default function App() {
         <SafeAreaProvider>
           <Provider store={store}>
             <Navigation />
-            {/* <StatusBar style="auto" /> */}
+            <StatusBar style="auto" />
           </Provider>
         </SafeAreaProvider>
       </PaperProvider>

@@ -6,30 +6,35 @@ import {
   ImageBackground,
   Button,
   TouchableOpacity,
+  Pressable,
+  Image,
+  StatusBar,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { BlurView, VibrancyView } from "@react-native-community/blur";
+import { s } from "react-native-wind";
 
 const slides = [
   {
-    title: "Welcome to\nBravel!",
+    title: "Welcome to\nTicketGo!",
     description:
       "Labore sunt culpa excepteur culpa\nipsum. Labore occaecat ex nisi mollit.",
-    image: "https://dl.dropbox.com/s/ignnjnfhzuxv5g0/01.jpg?dl=0",
+    image: "https://images.pexels.com/photos/333525/pexels-photo-333525.jpeg",
   },
   {
     title: "Booking in\nminutes!",
     description:
       "Labore sunt culpa excepteur culpa\nipsum. Labore occaecat ex nisi mollit.",
-    image: "https://dl.dropbox.com/s/rkwu1w7n0xzb985/02.jpg?dl=0",
+    // image: "https://images.pexels.com/photos/2045249/pexels-photo-2045249.jpeg",
+    image: "https://images.pexels.com/photos/946281/pexels-photo-946281.jpeg",
   },
   {
     title: "Enjoy your\ntrip!",
     description:
       "Labore sunt culpa excepteur culpa\nipsum. Labore occaecat ex nisi mollit.",
-    image: "https://dl.dropbox.com/s/xcr5hl5eai968yp/03.jpg?dl=0",
+    image: "https://images.pexels.com/photos/1656377/pexels-photo-1656377.jpeg",
   },
 ];
 
@@ -61,13 +66,14 @@ const OnBoarding = () => {
           <ImageBackground
             style={{
               width: width,
-              height: height,
+              height: "100%",
               justifyContent: "flex-end",
               paddingHorizontal: 20,
             }}
             source={{ uri: item.image }}
           >
             <SafeAreaView>
+              <StatusBar barStyle="light-content" />
               <View
                 style={{
                   alignSelf: "center",
@@ -75,11 +81,19 @@ const OnBoarding = () => {
                 }}
               >
                 {/* <svg.LogoSvg /> */}
+                <Image
+                  source={{
+                    uri: "https://takitchgraphics.com/wp-content/uploads/2020/06/cropped-TG-Logo_tp.png",
+                  }}
+                  style={s`object-contain h-20 w-20`}
+                />
               </View>
               <View
                 style={{
                   height: 204,
-                  marginBottom: 138,
+                  marginBottom: 185,
+                  // borderColor: "black",
+                  // borderWidth: 1,
                 }}
               >
                 <View
@@ -100,8 +114,9 @@ const OnBoarding = () => {
                   style={{
                     textAlign: "center",
                     color: "white",
-
+                    fontSize: 45,
                     marginBottom: 13,
+                    fontFamily: "josefinSans-bold",
                   }}
                 >
                   {item.title}
@@ -161,19 +176,32 @@ const OnBoarding = () => {
           );
         })}
       </View>
-      <TouchableOpacity
-        // title="Get Started"
+      <Pressable
         style={{
+          width: "90%",
+          marginHorizontal: 20,
           marginBottom: 54,
           position: "absolute",
           bottom: 0,
-          paddingHorizontal: 20,
+          padding: 15,
+          backgroundColor: "#2dd4bf",
+          //   borderWidth: 1,
+          //   borderRadius: 10,
         }}
         //@ts-ignore
         onPress={() => navigation.navigate("Root")}
       >
-        <Text>Get Started</Text>
-      </TouchableOpacity>
+        <Text
+          style={{
+            textAlign: "center",
+            color: "white",
+            fontSize: 16,
+            fontFamily: "catamaran-medium",
+          }}
+        >
+          Get Started
+        </Text>
+      </Pressable>
     </View>
   );
 };

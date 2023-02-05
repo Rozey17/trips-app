@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   RefreshControl,
   ImageBackground,
+  StatusBar,
   // TextInput,
 } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
@@ -15,7 +16,6 @@ import Modal from "react-native-modal";
 import Navigation from "../navigation/RootNavigation";
 import { useNavigation } from "@react-navigation/native";
 import DatePicker from "../components/DatePicker";
-import { StatusBar } from "expo-status-bar";
 import DropDownPicker from "react-native-dropdown-picker";
 import { TextInput } from "react-native-paper";
 
@@ -179,6 +179,7 @@ const Search = () => {
       style={s`h-full`}
     >
       <View style={s`flex-1 `}>
+        <StatusBar barStyle="light-content" />
         <View style={s`p-5`}>
           {/* <View style={s` bg-white p-4  border border-gray-300`}>
             <TouchableOpacity

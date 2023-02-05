@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, StatusBar } from "react-native";
 import React from "react";
 import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -7,6 +7,8 @@ import Header from "../components/Header";
 const Tickets = () => {
   return (
     <SafeAreaView style={s`flex-1 p-5 bg-white`}>
+      <StatusBar barStyle="dark-content" />
+
       <View style={s``}>
         <Text style={styles.title}>Tickets</Text>
       </View>

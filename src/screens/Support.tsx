@@ -3,10 +3,12 @@ import React from "react";
 import { s } from "react-native-wind";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/Header";
+import { StatusBar } from "expo-status-bar";
 
 const Support = () => {
   return (
     <SafeAreaView style={s`flex-1 p-5 bg-white`}>
+      {/* <StatusBar style="dark" /> */}
       <View style={s``}>
         <Text style={styles.title}>Support</Text>
       </View>
